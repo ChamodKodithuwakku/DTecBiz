@@ -282,7 +282,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--ink); line-height: 
 .count-box .label { font-size: .74rem; text-transform: uppercase; letter-spacing: .14em; color: #a9c7e8; }
 
 /* Cards */
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 28px; }
 .card {
     position: relative; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg);
     padding: 38px 30px; text-align: center; box-shadow: var(--shadow-sm);
@@ -306,7 +306,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--ink); line-height: 
 .card .btn { margin-top: auto; padding: 10px 26px; font-size: .76rem; }
 
 /* Themes */
-.themes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+.themes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; }
 .themes-grid .theme {
     position: relative; background: #fff; border: 1px solid var(--border); border-radius: 14px;
     padding: 18px 22px 18px 26px; font-size: .96rem; color: var(--ink); font-weight: 500;
@@ -337,7 +337,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--ink); line-height: 
 }
 
 /* Downloads strip */
-.download-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+.download-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 28px; }
 .download-strip .card .img-ph { min-height: 210px; margin-bottom: 20px; }
 .template-cover-image {
     width: 100%;
@@ -407,7 +407,7 @@ table.fees tr:hover td { background: var(--bg-tint); }
 .speaker-year { margin-bottom: 60px; }
 .speaker-year > h2 { text-align: center; font-size: 1.5rem; margin-bottom: 34px; }
 .speaker-year > h2 span { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.speakers { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px; justify-content: center; max-width: 1000px; margin: 0 auto; }
+.speakers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 28px; justify-content: center; max-width: 1000px; margin: 0 auto; }
 .speaker {
     background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 30px 24px;
     text-align: center; box-shadow: var(--shadow-sm); transition: transform .25s, box-shadow .3s;
@@ -428,12 +428,12 @@ table.fees tr:hover td { background: var(--bg-tint); }
 .speaker p { font-size: .84rem; color: var(--muted); line-height: 1.55; }
 
 /* Gallery */
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 18px; }
 .gallery-grid .img-ph { min-height: 200px; font-size: .66rem; transition: transform .3s, box-shadow .3s; }
 .gallery-grid .img-ph:hover { transform: scale(1.03); box-shadow: var(--shadow); }
 
 /* Contact */
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 30px; }
 .contact-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 36px; text-align: center; transition: transform .25s, box-shadow .3s; }
 .contact-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .contact-card .img-ph { width: 130px; height: 130px; min-height: 130px; border-radius: 50%; margin: 0 auto 20px; font-size: .58rem; }
@@ -648,6 +648,100 @@ table.fees tr:hover td { background: var(--bg-tint); }
     html { scroll-behavior: auto; }
 }
 
+
+@media (max-width: 760px) {
+    body { font-size: 15px; line-height: 1.65; }
+    .container { width: min(100% - 32px, 1200px); }
+    .site-header .container { padding: 10px 0; }
+    .brand-logo { height: 46px; }
+    .site-header.scrolled .brand-logo { height: 40px; }
+    .nav-toggle { padding: 6px 10px; font-size: 1.12rem; }
+    .main-nav { max-height: calc(100svh - 68px); overflow-y: auto; }
+    .main-nav a { white-space: normal; }
+    .main-nav .sub-menu a { font-size: .86rem; padding-left: 14px; }
+
+    .video-hero { min-height: auto; padding: 0; background: #050b20; }
+    .video-hero-media { min-height: auto; height: auto; max-height: 72svh; object-fit: contain; }
+
+    .hero { padding: 74px 0 66px; }
+    .hero-cobrand { width: min(100%, 360px); justify-content: center; gap: 10px; padding: 10px 12px; border-radius: 18px; }
+    .hero-cobrand img.dtb { height: 38px; }
+    .hero-cobrand .divider { height: 26px; }
+    .hero-cobrand .host img { height: 27px; padding: 4px 7px; }
+    .hero h1 { font-size: clamp(1.75rem, 8vw, 2.45rem); line-height: 1.14; }
+    .hero .hero-meta { line-height: 1.45; }
+    .hero .hero-tagline { margin-bottom: 28px; }
+    .hero .hero-cta { flex-direction: column; align-items: stretch; max-width: 310px; margin: 0 auto; }
+    .btn { width: 100%; text-align: center; padding: 12px 18px; }
+    .btn-outline { margin-left: 0; }
+
+    .section { padding: 62px 0; }
+    .section-head { margin-bottom: 34px; }
+    .section-head h2 { font-size: clamp(1.55rem, 7vw, 2.05rem); }
+    .section-head p { font-size: .96rem; }
+    .page-hero { padding: 70px 0 60px; }
+    .page-hero h1 { font-size: clamp(1.9rem, 9vw, 2.55rem); }
+    .page-hero .crumb { font-size: .75rem; line-height: 1.5; }
+
+    .split { gap: 30px; }
+    .welcome-image, .venue-image { min-height: 0; max-height: none; height: auto; object-fit: contain; }
+    .venue-image:not(.venue-image-contain), .welcome-image { aspect-ratio: 16 / 10; object-fit: cover; }
+    .venue-image-contain { aspect-ratio: auto; }
+
+    .countdown-band { padding: 56px 0; }
+    .countdown { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .count-box { width: 100%; padding: 20px 8px; }
+    .count-box .num { font-size: 2.25rem; }
+
+    .card { padding: 30px 20px; border-radius: 14px; }
+    .card .date { font-size: 1.18rem; }
+    .themes-grid .theme { padding: 16px 16px 16px 20px; }
+    .pub-box { padding: 28px 20px; gap: 26px; }
+    .abstract-book-image, .template-cover-image { max-height: none; padding: 8px; }
+    .hostband { padding: 52px 0; }
+    .hostband .logos { gap: 18px; }
+    .hostband .logo-card { width: 100%; padding: 24px 20px; }
+
+    .speaker { padding: 26px 18px; }
+    .speaker-photo { width: 150px; height: 150px; }
+    .content h2 { font-size: 1.35rem; }
+    .table-wrap { border-radius: 10px; }
+    table.fees { min-width: 520px; }
+    .closed-card { margin: 0; }
+    .map-ph { min-height: 0; margin-top: 30px; }
+    .map-panel iframe { height: 300px; }
+    .map-panel-footer { padding: 20px; }
+
+    .footer-grid { gap: 28px; }
+    .site-footer { padding-top: 52px; }
+    .footer-bottom .container { flex-direction: column; align-items: flex-start; }
+    #scrollTop { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+}
+
+@media (max-width: 430px) {
+    .container { width: min(100% - 24px, 1200px); }
+    .brand-logo { height: 40px; }
+    .nav-toggle { border-radius: 8px; }
+    .hero-cobrand { align-items: center; }
+    .hero-cobrand img.dtb { height: 34px; }
+    .hero-cobrand .host small { font-size: .52rem; }
+    .hero-cobrand .host img { height: 24px; }
+    .hero h1 { font-size: clamp(1.55rem, 9vw, 2rem); }
+    .hero .hero-meta { font-size: .94rem; }
+    .hero .hero-tagline { font-size: .96rem; }
+    .section { padding: 50px 0; }
+    .page-hero { padding: 58px 0 50px; }
+    .cards, .themes-grid, .download-strip, .gallery-grid { gap: 14px; }
+    .countdown { grid-template-columns: 1fr 1fr; }
+    .count-box .num { font-size: 1.9rem; }
+    .count-box .label { font-size: .64rem; }
+    .pub-box { padding: 22px 16px; }
+    .closed-card { padding: 36px 16px; }
+    .closed-status { letter-spacing: .1em; }
+    .closed-card p { font-size: .96rem; }
+    .map-panel iframe { height: 260px; }
+    .footer-logos .chip { width: 100%; justify-content: center; }
+}
 /* ---------- Responsive ---------- */
 @media (max-width: 1180px) { .host-badge { display: none; } }
 @media (max-width: 1024px) { .main-nav a { padding: 9px 9px; font-size: .76rem; } }
@@ -668,6 +762,39 @@ table.fees tr:hover td { background: var(--bg-tint); }
     .closed-card { padding: 42px 22px; }
     .closed-visual { width: 96px; height: 96px; }
     .closed-icon { width: 62px; height: 62px; font-size: 1.85rem; }
-    .video-hero, .video-hero-media { min-height: calc(100svh - 75px); }
-    .hero { padding: 96px 0 80px; }
+    .video-hero, .video-hero-media { min-height: auto; }
+    .hero { padding: 88px 0 76px; }
+}
+
+/* Final phone overrides: keep these after the broad tablet rules. */
+@media (max-width: 760px) {
+    .video-hero, .video-hero-media { min-height: auto; }
+    .video-hero-media { height: auto; max-height: 72svh; }
+    .hero { padding: 74px 0 66px; }
+    .btn { width: 100%; max-width: 100%; }
+    .hero-cta .btn, .closed-actions .btn, .map-panel-footer .btn { width: 100%; }
+    .download-strip { max-width: 520px; margin: 0 auto; }
+    .abstract-book-image { width: min(100%, 320px); margin: 0 auto; }
+    .template-cover-image { width: 100%; }
+    .venue-block { margin-bottom: 48px; }
+    .footer-bottom .container { justify-content: flex-start !important; }
+}
+
+@media (max-width: 430px) {
+    .main-nav { padding: 10px 16px; }
+    .main-nav a { padding: 12px 8px; font-size: .86rem; }
+    .main-nav .sub-menu { padding-left: 10px; }
+    .hero-cobrand { flex-wrap: wrap; border-radius: 16px; }
+    .hero-cobrand .divider { display: none; }
+    .hero-cobrand .host { align-items: center; }
+    .hero-cta, .closed-actions { max-width: none; }
+    .section-head .eyebrow { letter-spacing: .16em; }
+    .card { padding: 26px 16px; }
+    .card h3 { font-size: 1rem; }
+    .themes-grid .theme { font-size: .9rem; }
+    .pub-box ul { margin-left: 18px; }
+    .speaker-photo { width: 136px; height: 136px; }
+    .venue-image:not(.venue-image-contain), .welcome-image { aspect-ratio: 4 / 3; }
+    .hostband .logo-card img { height: 54px; }
+    .hostband .logo-card.dtb img { height: 70px; }
 }

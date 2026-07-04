@@ -11,7 +11,10 @@
             mainNav.classList.toggle('open');
             navToggle.setAttribute('aria-expanded', mainNav.classList.contains('open'));
         });
-        mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
+        mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            mainNav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }));
     }
 
     /* ---------- Header shrink + scroll progress ---------- */
