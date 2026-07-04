@@ -351,6 +351,61 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--ink); line-height: 
     padding: 10px;
 }
 
+/* Official trailer */
+.trailer-section {
+    overflow: hidden;
+}
+.trailer-card {
+    position: relative;
+    display: block;
+    width: min(980px, 100%);
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #050b20;
+    border: 1px solid rgba(30, 99, 189, .14);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 70px rgba(18, 36, 110, .18);
+}
+.trailer-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+    z-index: 1;
+}
+.trailer-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease, filter .35s ease;
+}
+.trailer-card:hover img {
+    transform: scale(1.025);
+    filter: brightness(.86);
+}
+.trailer-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,.94);
+    box-shadow: 0 18px 45px rgba(8,18,53,.28);
+    z-index: 2;
+}
+.trailer-play::after {
+    content: "";
+    position: absolute;
+    left: 31px;
+    top: 23px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 22px solid var(--blue);
+}
 /* Hosted-by band */
 .hostband { padding: 66px 0; background: var(--bg-soft); text-align: center; }
 .hostband .logos { display: flex; align-items: stretch; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 28px; }
@@ -781,6 +836,8 @@ table.fees tr:hover td { background: var(--bg-tint); }
     .download-strip { max-width: 520px; margin: 0 auto; }
     .abstract-book-image { width: min(100%, 320px); margin: 0 auto; }
     .template-cover-image { width: 100%; }
+    .trailer-play { width: 58px; height: 58px; }
+    .trailer-play::after { left: 24px; top: 18px; border-top-width: 11px; border-bottom-width: 11px; border-left-width: 17px; }
     .venue-block { margin-bottom: 48px; }
     .footer-bottom-row { justify-items: flex-start; }
 }
